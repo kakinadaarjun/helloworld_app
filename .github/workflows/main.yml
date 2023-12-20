@@ -1,0 +1,29 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Deploy to AWS EC2
+        run: |
+          # Add your deployment script here (e.g., using SSH)
+          # Example:
+          # scp -r * ec2-user@<your-ec2-ip>:~/hello-world-app
+          # ssh ec2-user@<your-ec2-ip> "cd hello-world-app && npm install && npm start"
