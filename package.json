@@ -1,0 +1,10 @@
+{
+  "name": "hello-world-app",
+  "version": "2023.1.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
